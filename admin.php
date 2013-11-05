@@ -1,5 +1,27 @@
 <?php
-if(isset($_POST['bt']) && $_POST['bt'] == 'Login')
+if(isset($_POST['bt']) && $_POST['bt'] == 'Login') {
+  include('include/oConn.php');
+
+  $usuario = mysql_real_escape_string($_POST['user']);
+  $senha = mysql_real_escape_string($_POST['password']);
+
+  $SelectUser = "SELECT * FROM usuarios WHERE usuario = '".$usuario."' AND senha = md5('".$senha."')";
+  $result = mysql_query($SelectUser) or die(mysql_error());
+  $user = mysql_fetch_assoc($result);
+  $numUser = mysql_num_rows($result);
+  if($numUser == 1){
+    session_start();
+    $_SESSION['idusuario'] = $user['id'];
+    $_SESSION['username'] = $user['nome'];
+    $_SESSION['user'] = $user['usuario'];
+
+    header('Location: admin_materias.php');
+
+  }
+  else{
+    $loginErr = true;
+  }
+}
   
 ?>
 
@@ -35,7 +57,14 @@ if(isset($_POST['bt']) && $_POST['bt'] == 'Login')
       <hr>
 
       <div class="row">
-        <div class="span12" style="">
+        <div class="span12" >
+          <?php
+            if(isset($loginErr)){
+              ?>
+              <div class="alert alert-error">Usuário ou senha incorretos!</div>
+              <?php
+            }
+          ?>
           <form action="admin.php" method="post" enctype="multipart/form-data" onsubmit="return validaForm();">
             <div class="form-group">
               <div class="input-group">

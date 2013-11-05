@@ -37,3 +37,10 @@ body {
 .marketing p + h4 {
   margin-top: 28px;
 }
+
+.msgLogado {
+  color: #DDD;
+}
+.msgLogado:hover {
+  color: #333;
+}
