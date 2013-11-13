@@ -7,6 +7,12 @@ if(!isset($_SESSION['user'])){
   die();
 }
 
+if(isset($_GET['acao']) && $_GET['acao'] == 'del'){
+  $codigo = (int)$_GET['id'];
+  echo $codigo;
+}
+die();
+
 if(isset($_POST['bt'])){
   include('include/oConn.php');
   $titulo = mysql_real_escape_string($_POST['titulo']);
