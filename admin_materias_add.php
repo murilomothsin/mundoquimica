@@ -7,20 +7,44 @@ if(!isset($_SESSION['user'])){
   die();
 }
 
+include('include/oConn.php');
+
 if(isset($_GET['acao']) && $_GET['acao'] == 'del'){
   $codigo = (int)$_GET['id'];
-  echo $codigo;
+  $delMateria = "DELETE FROM materias WHERE id = '".$codigo."'";
+  $result = mysql_query($delMateria) or die(mysql_error());
+  header('Location: admin_materias.php');
+  die();
 }
-die();
+
+if(isset($_GET['acao']) && $_GET['acao'] == 'edit'){
+  $codigo = (int)$_GET['id'];
+  $selectMateria = "SELECT materias.*, usuarios.nome as userCriador FROM materias
+                            JOIN usuarios ON usuarios.id = materias.criador
+                            WHERE materias.id = '".$codigo."'
+                            LIMIT 1";
+  $result = mysql_query($selectMateria) or die(mysql_error());
+  $Materia = mysql_fetch_assoc($result);
+}
 
 if(isset($_POST['bt'])){
-  include('include/oConn.php');
-  $titulo = mysql_real_escape_string($_POST['titulo']);
-  $texto = mysql_real_escape_string(addslashes($_POST['texto']));
 
-  $insert = "INSERT INTO materias (titulo, texto, criado, criador)
-                                  VALUES ('".$titulo."', '".$texto."', now(), ".$_SESSION['idusuario'].")";
-  $query = mysql_query($insert) or die(mysql_error());
+  include('include/oConn.php');
+
+  if($_POST['method'] == 'insert'){
+    $titulo = mysql_real_escape_string($_POST['titulo']);
+    $texto = mysql_real_escape_string(addslashes($_POST['texto']));
+    $insert = "INSERT INTO materias (titulo, texto, criado, criador)
+                                    VALUES ('".$titulo."', '".$texto."', now(), ".$_SESSION['idusuario'].")";
+    $query = mysql_query($insert) or die(mysql_error());
+  }elseif($_POST['method'] == 'update'){
+    $titulo = mysql_real_escape_string($_POST['titulo']);
+    $texto = mysql_real_escape_string(addslashes($_POST['texto']));
+    $update = "UPDATE materias SET titulo = '".$titulo."', texto = '".$texto."' WHERE id = '".(int)$_GET['id']."'";
+    $query = mysql_query($update) or die(mysql_error());
+  }
+  header('Location: admin_materias.php');
+  die();
 }
 
 ?>
@@ -53,9 +77,7 @@ if(isset($_POST['bt'])){
         <div class="span5"><h3>Matérias</h3></div>
         <div class="span7">
           <ul class="nav nav-pills pull-right">
-            <li><a href="admin_materias_add.php"> Adicionar </a></li>
-            <li><a href="#"> Adicionar </a></li>
-            <li><a href="#"> Adicionar </a></li>
+            <li><a href="admin_materias.php"> Voltar </a></li>
           </ul>
         </div>
       </div>
@@ -64,32 +86,18 @@ if(isset($_POST['bt'])){
 
       <div class="row">
         <div class="span10 offset1" >
-          <?php
-            if(isset($query) && $query === true){
-              ?>
-              <div class="alert">
-                <h3>OK!</h3>
-                <p>
-                  Sua matéria foi adicionada com sucesso ao banco de dados!
-                </p>
-              </div>
-              <?php
-            }elseif(isset($query) && $query === false){
-              ?>
-              <div class="alert alert-error">
-                <h3>Erro!</h3>
-                <p>
-                  Não foi possivel adicionar sua matéria ao banco de dados!
-                </p>
-              </div>
-              <?php
-            }
-          ?>
           <form method="post" enctype="multipart/form-data" onsubmit="return validaForm();">
             <center>
-              <input type="text" style="width: 90%;" maxlength="225" name="titulo" class="form-control" placeholder="Título da matéria"><br>
-              <textarea name="texto" style="width: 90%; height: 400px;" class="form-control" placeholder="Digite o texto da matéria aqui..."></textarea> <br>
+              <input type="text" style="width: 90%;" maxlength="225" name="titulo" class="form-control" placeholder="Título da matéria" value="<?php if(isset($_GET) && $_GET['acao'] == 'edit') echo stripslashes($Materia['titulo']); ?>" ><br>
+              <textarea name="texto" style="width: 90%; height: 400px;" class="form-control" placeholder="Digite o texto da matéria aqui..."><?php if(isset($_GET) && $_GET['acao'] == 'edit') echo stripslashes($Materia['texto']); ?></textarea> <br>
+              <p style="font-size: 11px; text-align: right; width: 90%;"><?php if(isset($_GET) && $_GET['acao'] == 'edit') echo "Criado por: ".$Materia['userCriador'].",&nbsp; em ".$Materia['criado']; ?></p>
               <span class="input-group-btn">
+                <?php
+                if(isset($_GET) && $_GET['acao'] == 'edit')
+                  echo '<input type="hidden" value="update" name="method" />';
+                else
+                  echo '<input type="hidden" value="insert" name="method" />';
+                 ?>
                 <button class="btn btn-default" name="bt" value="Gravar" type="submit">Gravar</button>
               </span>
             </center>
