@@ -40,5 +40,19 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- Data exporting was unselected.
+
+CREATE TABLE IF NOT EXISTS `videos` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `titulo` varchar(250) NOT NULL,
+  `embed` text NOT NULL,
+  `criado` datetime NOT NULL,
+  `criador` int(10) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `criador` (`criador`),
+  CONSTRAINT `FK_videos_usuarios` FOREIGN KEY (`criador`) REFERENCES `usuarios` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
 /*!40014 SET FOREIGN_KEY_CHECKS=1 */;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

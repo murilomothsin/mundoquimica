@@ -7,13 +7,13 @@ if(!isset($_SESSION['user'])){
   die();
 }
 include('include/oConn.php');
-$selectMaterias = "SELECT materias.*, usuarios.nome FROM materias
-                    JOIN usuarios ON usuarios.id = materias.criador";
-$result = mysql_query($selectMaterias) or die(mysql_error());
-$materias = array();
+$selectVideos = "SELECT videos.*, usuarios.nome FROM videos
+                    JOIN usuarios ON usuarios.id = videos.criador";
+$result = mysql_query($selectVideos) or die(mysql_error());
+
 $i = 0;
-while($row_materias = mysql_fetch_assoc($result)){
-  $Listmaterias[$i++] = $row_materias;
+while($row_videos = mysql_fetch_assoc($result)){
+  $Listvideos[$i++] = $row_videos;
 }
 
 function getPreview($text) {
@@ -51,7 +51,7 @@ function getPreview($text) {
       <hr>
 
       <div class="row">
-        <div class="span5"><h3>Matérias</h3></div>
+        <div class="span5"><h3>Vídeos</h3></div>
         <div class="span7">
           <ul class="nav nav-pills pull-right">
             <li><a href="admin_materias_add.php"> Adicionar </a></li>
@@ -73,18 +73,19 @@ function getPreview($text) {
               <th>&nbsp;</th>
             </thead>
             <?php
-            foreach ($Listmaterias as $key => $value) {
-            ?>
-            <tr>
-              <td><?php echo $value['id'];?></td>
-              <td><?php echo $value['titulo'];?></td>
-              <td><?php echo getPreview($value['texto']);?></td>
-              <td><?php echo date("d/m/Y H:i", strtotime($value['criado']));?></td>
-              <td><?php echo $value['nome'];?></td>
-              <td><a href="admin_materias_add.php?acao=edit&id=<?php echo $value['id']?>"><i style="padding: 2px;" class="fa fa-pencil-square-o"></i></a><a href="admin_materias_add.php?acao=del&id=<?php echo $value['id']?>"><i style="padding: 2px;" class="fa fa-times"></i></a></td>
-            </tr>
-            <?php
-            }
+            if(isset($Listvideos))
+              foreach ($Listvideos as $key => $value) {
+              ?>
+              <tr>
+                <td><?php echo $value['id'];?></td>
+                <td><?php echo $value['titulo'];?></td>
+                <td><?php echo getPreview($value['texto']);?></td>
+                <td><?php echo date("d/m/Y H:i", strtotime($value['criado']));?></td>
+                <td><?php echo $value['nome'];?></td>
+                <td><a href="admin_materias_add.php?acao=edit&id=<?php echo $value['id']?>"><i style="padding: 2px;" class="fa fa-pencil-square-o"></i></a><a href="admin_materias_add.php?acao=del&id=<?php echo $value['id']?>"><i style="padding: 2px;" class="fa fa-times"></i></a></td>
+              </tr>
+              <?php
+              }
             ?>
           </table>
         </div>
