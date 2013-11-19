@@ -1,4 +1,4 @@
-<?php 
+<?php
 
   $page = $_SERVER["PHP_SELF"];
   $page = explode("/", $page);
@@ -11,6 +11,7 @@
     case 'index':
       $index = "active";
     break;
+    case 'materia_view':
     case 'materias':
       $materias = "active";
     break;

@@ -2,13 +2,13 @@
 
 include("include/oConn.php");
 
+$codigo = (int)$_GET['id'];
+
 $select = "SELECT materias.*, usuarios.nome FROM materias
-                    JOIN usuarios ON usuarios.id = materias.criador";
+                    JOIN usuarios ON usuarios.id = materias.criador
+                    WHERE materias.id = '".$codigo."'";
 $result = mysql_query($select) or die(mysql_error());
-$listmaterias = array();
-while ( $row = mysql_fetch_assoc($result) ) {
-  $listmaterias[] = $row;
-}
+$row = mysql_fetch_assoc($result);
 
 function getPreview($text, $caracs) {
   if(strlen($text) > $caracs){
@@ -44,43 +44,17 @@ function getPreview($text, $caracs) {
       <hr>
 
       <div class="jumbotron">
-        <h1>Matérias</h1>
+        <h3><?php echo $row['titulo']; ?></h3>
       </div>
 
       <hr>
 
       <div class="row">
-        <div class="span12">
-          <table class="table table-hover">
-            <thead>
-              <th style="width: 5%;">
-                Código
-              </th>
-              <th style="width: 25%;">
-                Título
-              </th>
-              <th style="width: 45%;">
-                Texto
-              </th>
-              <th style="width: 25%;">
-                Publicação
-              </th>
-            </thead>
-            <tbody>
-              <?php
-              foreach ($listmaterias as $key => $value) {
-              ?>
-              <tr>
-                <td><?php echo $value['id'];?></td>
-                <td><a href="materia_view.php?id=<?php echo $value['id']; ?>"><?php echo getPreview($value['titulo'], 35);?></a></td>
-                <td><a href="materia_view.php?id=<?php echo $value['id']; ?>"><?php echo getPreview($value['texto'], 75);?></a></td>
-                <td><?php echo "Por ".$value['nome']." - ".date("d/m/Y H:i", strtotime($value['criado']));?></td>
-              </tr>
-              <?php
-              }
-              ?>
-            </tbody>
-          </table>
+        <div class="span8 offset2">
+          <p>
+            <?php echo $row['texto']; ?>
+          </p>
+          <span style="color: #333; font-size: 11px;">Postado por <?php echo $row['nome']; ?> em <?php echo date("d/m/Y H:i", strtotime($value['criado'])); ?></span>
         </div>
       </div>
 

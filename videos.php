@@ -30,26 +30,13 @@
 
       <div class="row">
         <div class="span12">
-          <table class="table">
-            <thead>
-              <th>
-                Código
-              </th>
-              <th>
-                Título
-              </th>
-              <th>
-                Publicação
-              </th>
-            </thead>
-            <tbody>
-              <tr>
-                <td>1</td>
-                <td>Teste</td>
-                <td>04/11/2013</td>
-              </tr>
-            </tbody>
-          </table>
+          <ul class="thumbnails">
+            <li class="span7 offset3 listaImagens">
+              <div class="thumbnail">
+                <iframe width="640" height="480" src="//www.youtube.com/embed/5xyDMShqib8?rel=0" frameborder="0" allowfullscreen></iframe>
+              </div>
+            </li>
+          </ul>
         </div>
       </div>
 
