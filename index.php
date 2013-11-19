@@ -56,6 +56,33 @@
 
       <hr>
 
+      <div class="row">
+        <div class="span12">
+          <h3>Um título de opcional!</h3>
+        </div>
+        <div class="span12">
+          <ul class="thumbnails">
+            <li class="span4">
+              <div class="thumbnail">
+                <img data-src="images/quimica1.jpg" alt="">
+              </div>
+            </li>
+            <li class="span4">
+              <a href="#" class="thumbnail">
+                <img data-src="images/quimica2.jpg" alt="">
+              </a>
+            </li>
+            <li class="span4">
+              <a href="#" class="thumbnail">
+                <img data-src="images/quimica3.jpg" alt="">
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <hr>
+
       <footer>
         <p>&copy; Química <?php echo date('Y'); ?></p>
       </footer>
