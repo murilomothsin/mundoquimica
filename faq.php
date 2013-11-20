@@ -31,30 +31,72 @@
       <div class="row">
         <div class="span12">
           <div class="accordion" id="accordion2">
+
             <div class="accordion-group">
               <div class="accordion-heading">
                 <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
-                  Pergunta 1
+                  Quando um composto é orgânico?
                 </a>
               </div>
               <div id="collapseOne" class="accordion-body collapse">
                 <div class="accordion-inner">
-                  Resposta 1
+                  Possui carbono em sua molécula.
                 </div>
               </div>
             </div>
+
             <div class="accordion-group">
               <div class="accordion-heading">
                 <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
-                  Pergunta 2
+                  O que a Química Orgânica estuda?
                 </a>
               </div>
               <div id="collapseTwo" class="accordion-body collapse">
                 <div class="accordion-inner">
-                  Resposta 2
+                  Todos os compostos que derivam dos seres vivos.
                 </div>
               </div>
             </div>
+
+            <div class="accordion-group">
+              <div class="accordion-heading">
+                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseThree">
+                  O que é a “Teoria da Força Vital”?
+                </a>
+              </div>
+              <div id="collapseThree" class="accordion-body collapse">
+                <div class="accordion-inner">
+                  Foi uma antiga teoria em que se acreditava que apenas seres vivos pudessem produzir matéria orgânica. Porém em  1828, Friedrich Wöhler (químico alemão: 1800-1882), a partir do cianato de amônio, produziu a uréia; começando, assim, a queda da teoria da força vital.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-group">
+              <div class="accordion-heading">
+                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseFour">
+                  Qual a definição de carbono primário?
+                </a>
+              </div>
+              <div id="collapseFour" class="accordion-body collapse">
+                <div class="accordion-inner">
+                  É o carbono que está ligado a apenas um outro carbono, já o secundário se liga a dois carbonos, o terciário a três e o quaternário a quatro carbonos.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-group">
+              <div class="accordion-heading">
+                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseFive">
+                  Quando uma cadeia é saturada?
+                </a>
+              </div>
+              <div id="collapseFive" class="accordion-body collapse">
+                <div class="accordion-inner">
+                  Quando os carbonos estão ligados apenas por ligação simples.
+                </div>
+              </div>
+            </div>
+
           </div>
         </div>
       </div>
