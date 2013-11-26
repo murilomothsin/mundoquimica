@@ -11,20 +11,20 @@ include('include/oConn.php');
 
 if(isset($_GET['acao']) && $_GET['acao'] == 'del'){
   $codigo = (int)$_GET['id'];
-  $delMateria = "DELETE FROM videos WHERE id = '".$codigo."'";
-  $result = mysql_query($delMateria) or die(mysql_error());
+  $delVideo = "DELETE FROM videos WHERE id = '".$codigo."'";
+  $result = mysql_query($delVideo) or die(mysql_error());
   header('Location: admin_videos.php');
   die();
 }
 
 if(isset($_GET['acao']) && $_GET['acao'] == 'edit'){
   $codigo = (int)$_GET['id'];
-  $selectMateria = "SELECT videos.*, usuarios.nome as userCriador FROM videos
+  $selectVideo = "SELECT videos.*, usuarios.nome as userCriador FROM videos
                             JOIN usuarios ON usuarios.id = videos.criador
                             WHERE videos.id = '".$codigo."'
                             LIMIT 1";
-  $result = mysql_query($selectMateria) or die(mysql_error());
-  $Materia = mysql_fetch_assoc($result);
+  $result = mysql_query($selectVideo) or die(mysql_error());
+  $Video = mysql_fetch_assoc($result);
 }
 
 if(isset($_POST['bt'])){
@@ -40,7 +40,7 @@ if(isset($_POST['bt'])){
   }elseif($_POST['method'] == 'update'){
     $titulo = mysql_real_escape_string($_POST['titulo']);
     $texto = mysql_real_escape_string(addslashes($_POST['texto']));
-    $update = "UPDATE videos SET titulo = '".$titulo."', texto = '".$texto."' WHERE id = '".(int)$_GET['id']."'";
+    $update = "UPDATE videos SET titulo = '".$titulo."', embed = '".$texto."' WHERE id = '".(int)$_GET['id']."'";
     $query = mysql_query($update) or die(mysql_error());
   }
   header('Location: admin_videos.php');
@@ -88,9 +88,9 @@ if(isset($_POST['bt'])){
         <div class="span10 offset1" >
           <form method="post" enctype="multipart/form-data" onsubmit="return validaForm();">
             <center>
-              <input type="text" style="width: 90%;" maxlength="225" name="titulo" class="form-control" placeholder="Título do vídeo" value="<?php if(isset($_GET) && $_GET['acao'] == 'edit') echo stripslashes($Materia['titulo']); ?>" ><br>
-              <textarea name="texto" style="width: 90%; height: 400px;" class="form-control" placeholder="Digite o texto da matéria aqui..."><?php if(isset($_GET) && $_GET['acao'] == 'edit') echo stripslashes($Materia['texto']); ?></textarea> <br>
-              <p style="font-size: 11px; text-align: right; width: 90%;"><?php if(isset($_GET) && $_GET['acao'] == 'edit') echo "Criado por: ".$Materia['userCriador'].",&nbsp; em ".$Materia['criado']; ?></p>
+              <input type="text" style="width: 90%;" maxlength="225" name="titulo" class="form-control" placeholder="Título do vídeo" value="<?php if(isset($_GET) && $_GET['acao'] == 'edit') echo stripslashes($Video['titulo']); ?>" ><br>
+              <textarea name="texto" style="width: 90%; height: 400px;" class="form-control" placeholder="Cole o código Embed do vídeo..."><?php if(isset($_GET) && $_GET['acao'] == 'edit') echo stripslashes($Video['embed']); ?></textarea> <br>
+              <p style="font-size: 11px; text-align: right; width: 90%;"><?php if(isset($_GET) && $_GET['acao'] == 'edit') echo "Criado por: ".$Video['userCriador'].",&nbsp; em ".$Video['criado']; ?></p>
               <span class="input-group-btn">
                 <?php
                 if(isset($_GET) && $_GET['acao'] == 'edit')

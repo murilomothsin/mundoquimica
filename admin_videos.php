@@ -54,7 +54,7 @@ function getPreview($text) {
         <div class="span5"><h3>Vídeos</h3></div>
         <div class="span7">
           <ul class="nav nav-pills pull-right">
-            <li><a href="admin_materias_add.php"> Adicionar </a></li>
+            <li><a href="admin_videos_add.php"> Adicionar </a></li>
           </ul>
         </div>
       </div>
@@ -67,7 +67,6 @@ function getPreview($text) {
             <thead>
               <th>Código</th>
               <th>Título</th>
-              <th>Conteúdo</th>
               <th>Adiconado</th>
               <th>Criador</th>
               <th>&nbsp;</th>
@@ -79,10 +78,9 @@ function getPreview($text) {
               <tr>
                 <td><?php echo $value['id'];?></td>
                 <td><?php echo $value['titulo'];?></td>
-                <td><?php echo getPreview($value['texto']);?></td>
                 <td><?php echo date("d/m/Y H:i", strtotime($value['criado']));?></td>
                 <td><?php echo $value['nome'];?></td>
-                <td><a href="admin_materias_add.php?acao=edit&id=<?php echo $value['id']?>"><i style="padding: 2px;" class="fa fa-pencil-square-o"></i></a><a href="admin_materias_add.php?acao=del&id=<?php echo $value['id']?>"><i style="padding: 2px;" class="fa fa-times"></i></a></td>
+                <td><a href="admin_videos_add.php?acao=edit&id=<?php echo $value['id']?>"><i style="padding: 2px;" class="fa fa-pencil-square-o"></i></a><a href="admin_videos_add.php?acao=del&id=<?php echo $value['id']?>"><i style="padding: 2px;" class="fa fa-times"></i></a></td>
               </tr>
               <?php
               }

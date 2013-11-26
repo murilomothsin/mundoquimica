@@ -1,3 +1,23 @@
+<?php
+
+include("include/oConn.php");
+
+$select = "SELECT videos.*, usuarios.nome FROM videos
+                    JOIN usuarios ON usuarios.id = videos.criador";
+$result = mysql_query($select) or die(mysql_error());
+$listvideos = array();
+while ( $row = mysql_fetch_assoc($result) ) {
+  $listvideos[] = $row;
+}
+
+function getPreview($text, $caracs) {
+  if(strlen($text) > $caracs){
+    return substr($text, 0, $caracs);
+  }
+  return $text;
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -31,11 +51,19 @@
       <div class="row">
         <div class="span12">
           <ul class="thumbnails">
-            <li class="span7 offset3 listaImagens">
-              <div class="thumbnail">
-                <iframe width="640" height="480" src="//www.youtube.com/embed/5xyDMShqib8?rel=0" frameborder="0" allowfullscreen></iframe>
-              </div>
-            </li>
+            <?php
+              foreach ($listvideos as $key => $value) {
+              ?>
+              <li class="span4 listaImagens">
+                <div class="thumbnail" style="height: 240px;">
+                  <center>
+                    <?php echo stripcslashes($value['embed']); ?>
+                  </center>
+                </div>
+              </li>
+              <?php
+              }
+              ?>
           </ul>
         </div>
       </div>

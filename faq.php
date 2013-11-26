@@ -1,3 +1,22 @@
+<?php
+
+include("include/oConn.php");
+
+$select = "SELECT * FROM faq";
+$result = mysql_query($select) or die(mysql_error());
+$listfaq = array();
+while ( $row = mysql_fetch_assoc($result) ) {
+  $listfaq[] = $row;
+}
+
+function getPreview($text, $caracs) {
+  if(strlen($text) > $caracs){
+    return substr($text, 0, $caracs);
+  }
+  return $text;
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -30,32 +49,26 @@
 
       <div class="row">
         <div class="span12">
+          <?php
+          foreach ($listfaq as $key => $value) {
+          ?>
           <div class="accordion" id="accordion2">
             <div class="accordion-group">
               <div class="accordion-heading">
-                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
-                  Pergunta 1
+                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapse<?php echo $key; ?>">
+                  <?php echo $value['pergunta']; ?>
                 </a>
               </div>
-              <div id="collapseOne" class="accordion-body collapse">
+              <div id="collapse<?php echo $key; ?>" class="accordion-body collapse">
                 <div class="accordion-inner">
-                  Resposta 1
-                </div>
-              </div>
-            </div>
-            <div class="accordion-group">
-              <div class="accordion-heading">
-                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
-                  Pergunta 2
-                </a>
-              </div>
-              <div id="collapseTwo" class="accordion-body collapse">
-                <div class="accordion-inner">
-                  Resposta 2
+                  <?php echo $value['resposta']; ?>
                 </div>
               </div>
             </div>
           </div>
+          <?php  
+          }
+          ?>
         </div>
       </div>
 
@@ -63,7 +76,7 @@
 
       <div class="row">
         <div class="span4 offset5">
-          <h3><a href="#">Enviar uma pergunta!</a></h3>
+          <h3><a href="faq_add.php">Enviar uma pergunta!</a></h3>
         </div>
       </div>
 
