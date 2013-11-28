@@ -36,33 +36,24 @@
       <hr>
 
       <div class="jumbotron">
-        <h1>Estude química ou morra!</h1>
-        <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-        <a class="btn btn-large btn-success" href="#">Começar agora</a>
+        <h1>Qual o propósito deste site?</h1>
+        <p class="lead">No ensino médio principalmente no 3° ano observamos que química orgânica é de extrema importância para a formação do aluno, um conhecimento significativo em qualquer área da ciência significa bons resultados no futuro, seja ele no ensino médio, técnico ou na faculdade. Este site propõe um novo parâmetro de educação, um meio alternativo para as aulas de química, com a possibilidade de ser acessado nos laboratórios de informática de quaisquer escolas ou até mesmo da casa do estudante, o site busca atingir também a sociedade curiosa que busca entender melhor a química orgânica.</p>
+        <a class="btn btn-large btn-success" href="materias.php">Começar agora</a>
       </div>
 
       <hr>
 
       <div class="row">
-        <div class="span12">
-          <h3>Sub-título</h3>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-          </p>
-        </div>
-      </div>
-
-      <div class="row">
         <div class="span6">
-          <h3>Sub-título</h3>
+          <h3>O que é a Química Orgânica? </h3>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+             A Química Orgânica é um ramo da química que estuda a estrutura, propriedades, composição, reações, e síntese de compostos orgânicos que, por definição, contenham carbono. Compostos orgânicos são moléculas formadas de carbono e hidrogênio, e podem conter diversos outros elementos. Muitos deles contêm nitrogênio, oxigênio, halogênios e, mais raramente, fósforo e enxofre.
           </p>
         </div>
         <div class="span6">
-          <h3>Sub-título</h3>
+          <h3>Qual sua importância?</h3>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            Tudo que é vida é composto por átomos de carbono, o que dá característica à Química Orgânica. Assim o estudo dela é crucial na medicina, por exemplo, levando em conta que medicamentos são todos baseados em substâncias orgânicas que reagem em nosso organismo. Os compostos orgânicos integram diversos materiais, tais como combustíveis, polímeros, pesticidas, herbicidas, fertilizantes, detergentes, aditivos alimentares, cosméticos, perfumes e medicamentos. Química Orgânica está inserida na nossa vida de uma forma muito natural, e às vezes nem percebemos, e é fato que o mundo não funcionaria se não fosse ela.
           </p>
         </div>
       </div>
@@ -71,54 +62,38 @@
 
       <div class="row">
         <div class="span12">
-          <h3>Um título de opcional!</h3>
+          <h3>Como nomear</h3>
         </div>
         <div class="span12">
           <ul class="thumbnails">
             <li class="span4 listaImagens">
               <a href="#" class="thumbnail">
                 <img src="images/quimica1.jpg" alt="">
-                <h3 class="text-link">Título da imagem Opcional</h3>
+                <h3 class="text-link">Radicais</h3>
               </a>
             </li>
             <li class="span4 listaImagens">
               <div class="thumbnail">
-                <img src="images/quimica1.jpg" alt="">
+                <img src="images/quimica6.gif" alt="">
+                <h3 class="text-link">Prefixos</h3>
               </div>
             </li>
             <li class="span4 listaImagens">
               <a href="#" class="thumbnail">
                 <img src="images/quimica2.jpg" alt="">
+                <h3 class="text-link">Infixos</h3>
               </a>
             </li>
             <li class="span4 listaImagens">
               <a href="#" class="thumbnail">
                 <img src="images/quimica3.jpg" alt="">
+                <h3 class="text-link">Sufixos</h3>
               </a>
             </li>
             <li class="span4 listaImagens">
               <a href="#" class="thumbnail">
                 <img src="images/quimica4.jpg" alt="">
-              </a>
-            </li>
-            <li class="span4 listaImagens">
-              <a href="#" class="thumbnail">
-                <img src="images/quimica5.jpg" alt="">
-              </a>
-            </li>
-            <li class="span4 listaImagens">
-              <a href="#" class="thumbnail">
-                <img src="images/quimica6.gif" alt="">
-              </a>
-            </li>
-            <li class="span4 listaImagens">
-              <a href="#" class="thumbnail">
-                <img src="images/quimica7.jpg" alt="">
-              </a>
-            </li>
-            <li class="span4 listaImagens">
-              <a href="#" class="thumbnail">
-                <img src="images/quimica8.jpg" alt="">
+                <h3 class="text-link">Fórmula Estrutural</h3>
               </a>
             </li>
           </ul>
