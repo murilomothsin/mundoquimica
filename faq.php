@@ -56,80 +56,18 @@ function getPreview($text, $caracs) {
 
             <div class="accordion-group">
               <div class="accordion-heading">
-<<<<<<< HEAD
                 <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapse<?php echo $key; ?>">
                   <?php echo $value['pergunta']; ?>
-=======
-                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
-                  Quando um composto é orgânico?
-                </a>
-              </div>
-              <div id="collapseOne" class="accordion-body collapse">
-                <div class="accordion-inner">
-                  Possui carbono em sua molécula.
-                </div>
-              </div>
-            </div>
-
-            <div class="accordion-group">
-              <div class="accordion-heading">
-                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
-                  O que a Química Orgânica estuda?
->>>>>>> 4e837bbc67132fe2959332a2109463b00e85a403
                 </a>
               </div>
               <div id="collapse<?php echo $key; ?>" class="accordion-body collapse">
                 <div class="accordion-inner">
-<<<<<<< HEAD
                   <?php echo $value['resposta']; ?>
-=======
-                  Todos os compostos que derivam dos seres vivos.
                 </div>
               </div>
             </div>
-
-            <div class="accordion-group">
-              <div class="accordion-heading">
-                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseThree">
-                  O que é a “Teoria da Força Vital”?
-                </a>
-              </div>
-              <div id="collapseThree" class="accordion-body collapse">
-                <div class="accordion-inner">
-                  Foi uma antiga teoria em que se acreditava que apenas seres vivos pudessem produzir matéria orgânica. Porém em  1828, Friedrich Wöhler (químico alemão: 1800-1882), a partir do cianato de amônio, produziu a uréia; começando, assim, a queda da teoria da força vital.
-                </div>
-              </div>
-            </div>
-
-            <div class="accordion-group">
-              <div class="accordion-heading">
-                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseFour">
-                  Qual a definição de carbono primário?
-                </a>
-              </div>
-              <div id="collapseFour" class="accordion-body collapse">
-                <div class="accordion-inner">
-                  É o carbono que está ligado a apenas um outro carbono, já o secundário se liga a dois carbonos, o terciário a três e o quaternário a quatro carbonos.
->>>>>>> 4e837bbc67132fe2959332a2109463b00e85a403
-                </div>
-              </div>
-            </div>
-
-            <div class="accordion-group">
-              <div class="accordion-heading">
-                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseFive">
-                  Quando uma cadeia é saturada?
-                </a>
-              </div>
-              <div id="collapseFive" class="accordion-body collapse">
-                <div class="accordion-inner">
-                  Quando os carbonos estão ligados apenas por ligação simples.
-                </div>
-              </div>
-            </div>
-
           </div>
-          <?php  
+          <?php
           }
           ?>
         </div>
