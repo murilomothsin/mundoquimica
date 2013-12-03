@@ -30,26 +30,11 @@
 
       <div class="row">
         <div class="span12">
-          <table class="table">
-            <thead>
-              <th>
-                Código
-              </th>
-              <th>
-                Título
-              </th>
-              <th>
-                Publicação
-              </th>
-            </thead>
-            <tbody>
-              <tr>
-                <td>1</td>
-                <td>Teste</td>
-                <td>04/11/2013</td>
-              </tr>
-            </tbody>
-          </table>
+          <center>
+            <h4>Alguma duvida? Mande uma pergunta:</h4>
+            <br /><br /><br />
+            <a href="https://www.facebook.com/rafaell.corr" target="_blank"><img src="images/fb_icon.png"></a>
+          </center>
         </div>
       </div>
 

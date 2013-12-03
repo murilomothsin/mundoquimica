@@ -62,41 +62,50 @@
 
       <div class="row">
         <div class="span12">
-          <h3>Como nomear</h3>
+          <h3>Curiosidades</h3>
         </div>
         <div class="span12">
           <ul class="thumbnails">
             <li class="span4 listaImagens">
-              <a href="#" class="thumbnail">
-                <img src="images/quimica1.jpg" alt="">
-                <h3 class="text-link">Radicais</h3>
+              <a href="http://www.mundodaquimica.com.br/2013/08/curiosidades-sobre-o-gas-lacrimogenio/" target="_blank" class="thumbnail">
+                <img src="images/gas.png" alt="">
+                <h4 class="text-link">Curiosidades sobre o Gás Lacrimogênio!</h4>
               </a>
             </li>
             <li class="span4 listaImagens">
-              <div class="thumbnail">
-                <img src="images/quimica6.gif" alt="">
-                <h3 class="text-link">Prefixos</h3>
-              </div>
-            </li>
-            <li class="span4 listaImagens">
-              <a href="#" class="thumbnail">
-                <img src="images/quimica2.jpg" alt="">
-                <h3 class="text-link">Infixos</h3>
+              <a href="http://www.mundodaquimica.com.br/2013/06/quantos-atomos-morrem-no-teu-corpo-2/" target="_blank" class="thumbnail">
+                <img src="images/atomo.png" alt="" style="height: 200px;">
+                <h4 class="text-link">Quantos átomos morrem no teu corpo?</h4>
               </a>
             </li>
             <li class="span4 listaImagens">
-              <a href="#" class="thumbnail">
-                <img src="images/quimica3.jpg" alt="">
-                <h3 class="text-link">Sufixos</h3>
+              <a href="http://www.mundodaquimica.com.br/2013/06/panela-de-pressao-afinal-que-milagre-e-esse/" target="_blank" class="thumbnail">
+                <img src="images/panela22.gif" alt="">
+                <h4 class="text-link">Panela de Pressão! Afinal, que milagre é esse!</h4>
               </a>
             </li>
             <li class="span4 listaImagens">
-              <a href="#" class="thumbnail">
-                <img src="images/quimica4.jpg" alt="">
-                <h3 class="text-link">Fórmula Estrutural</h3>
+              <a href="http://www.mundodaquimica.com.br/2013/06/por-que-os-mecanicos-orientam-colocar-aditivo-nos-radiadores-no-lugar-da-agua/" target="_blank" class="thumbnail">
+                <img src="images/aditivos.jpg" alt="">
+                <h4 class="text-link">Por que os mecânicos orientam colocar aditivo nos radiadores no lugar da água?</h4>
+              </a>
+            </li>
+            <li class="span4 listaImagens">
+              <a href="http://www.mundodaquimica.com.br/2013/01/as-bases-no-cotidiano/" target="_blank" class="thumbnail">
+                <img src="images/bases.jpg" alt="" style="height: 200px;">
+                <h4 class="text-link">As Bases no Cotidiano</h4>
+              </a>
+            </li>
+            <li class="span4 listaImagens">
+              <a href="http://www.mundodaquimica.com.br/2012/12/a-quimica-do-champagne/" target="_blank" class="thumbnail">
+                <img src="images/espumante.jpg" alt="">
+                <h4 class="text-link">A Química do Champagne</h4>
               </a>
             </li>
           </ul>
+          <center>
+            <a href="http://www.mundodaquimica.com.br/category/curiosidades-de-quimica/" target="_blank" style="font-size: 28px; height: 25px; padding: 25px;" class="btn btn-info">Ver Mais Curiosidades</a>
+          </center>
         </div>
       </div>
 
