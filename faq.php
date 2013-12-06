@@ -2,7 +2,7 @@
 
 include("include/oConn.php");
 
-$select = "SELECT * FROM faq";
+$select = "SELECT * FROM faq WHERE publicar = 1";
 $result = mysql_query($select) or die(mysql_error());
 $listfaq = array();
 while ( $row = mysql_fetch_assoc($result) ) {

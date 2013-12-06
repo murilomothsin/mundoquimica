@@ -6,12 +6,11 @@ if(isset($_POST['bt'])){
 
   include('include/oConn.php');
 
-  if($_POST['pergunta'] != '' && $_POST['resposta'] != ''){
+  if($_POST['pergunta'] != ''){
     $pergunta = mysql_real_escape_string(addslashes($_POST['pergunta']));
-    $resposta = mysql_real_escape_string(addslashes($_POST['resposta']));
 
-    $insert = "INSERT INTO faq (pergunta, resposta)
-                                    VALUES ('".$pergunta."', '".$resposta."')";
+    $insert = "INSERT INTO faq (pergunta)
+                                    VALUES ('".$pergunta."')";
     $query = mysql_query($insert) or die(mysql_error());
     header('Location: faq.php?st=ok');
     die();
@@ -43,7 +42,7 @@ if(isset($_POST['bt'])){
 
     <div class="container">
 
-      <?php include('include/admin_menu.php'); ?>
+      <?php include('include/menu.php'); ?>
 
       <hr>
 
@@ -63,7 +62,6 @@ if(isset($_POST['bt'])){
           <form method="post" enctype="multipart/form-data" onsubmit="">
             <center>
               <textarea name="pergunta" style="width: 90%; height: 150px;" class="form-control" placeholder="Pergunta"></textarea> <br>
-              <textarea name="resposta" style="width: 90%; height: 150px;" class="form-control" placeholder="Resposta"></textarea> <br>
               <span class="input-group-btn">
                 <button class="btn btn-default" name="bt" value="Gravar" type="submit">Enviar</button>
               </span>

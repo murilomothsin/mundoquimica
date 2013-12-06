@@ -18,6 +18,7 @@
     case 'videos':
       $videos = "active";
     break;
+    case 'faq_add':
     case 'faq':
       $faq = "active";
     break;

@@ -14,6 +14,9 @@
     case 'admin_videos':
       $videos = "active";
     break;
+    case 'admin_faq':
+      $faq = "active";
+    break;
     default:
       $materias = "active";
     break;
@@ -36,6 +39,7 @@
         <ul class="nav" >
           <li class="<?php echo $materias; ?>"><a href="admin_materias.php">Matérias</a></li>
           <li class="<?php echo $videos; ?>"><a href="admin_videos.php">Video Aulas</a></li>
+          <li class="<?php echo $faq; ?>"><a href="admin_faq.php">F.A.Q.</a></li>
         </ul>
       </div>
     </div>
